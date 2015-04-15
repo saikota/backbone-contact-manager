@@ -1,7 +1,7 @@
 /**
  * Created by Sai on 4/14/15.
  */
-ContactManager.Models.contact=Backbone.Model.extend({
+ContactManager.Models.Contact=Backbone.Model.extend({
     defaults:{
         name:null,
         tel:null,
