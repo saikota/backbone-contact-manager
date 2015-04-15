@@ -1,3 +1,5 @@
-/**
- * Created by Sai on 4/14/15.
- */
+window.ContactManager={
+    Models:{},
+    Collections:{},
+    Views:{}
+};
