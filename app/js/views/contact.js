@@ -17,7 +17,7 @@ ContactManager.Views.Contact=Backbone.View.extend({
     template: _.template($('#tpl-contact').html()),
     render:function(){
         var html=this.template(this.model.toJSON());
-        this.$el.html(html);
+        this.$el.append(html);
         return this;
     }
 });
