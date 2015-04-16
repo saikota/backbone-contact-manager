@@ -39,6 +39,7 @@
             <h3>
                 <%- name %>
                 <small>
+                    <a href="#contacts/edit/<%- id %>"><span class="glyphicon glyphicon-pencil"></span></a>
                     <a href="#contacts/delete/<%- id %>" class="delete-contact">
                         <span class="glyphicon glyphicon-trash"></span>
                     </a>
@@ -57,24 +58,24 @@
     </script>
 
     <script type="text/template" id="tpl-new-contact">
-      <h2 class="page-header text-center">Create Contact</h2>
+      <h2 class="page-header text-center"><%= isNew ? 'Create' : 'Edit' %> Contact</h2>
       <form role="form" class="form-horizontal contract-form">
         <div class="form-group">
           <label class="col-sm-4 control-label">Full name:</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control contact-name-input">
+            <input type="text" class="form-control contact-name-input" value="<%- name %>">
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label">Email address:</label>
           <div class="col-sm-6">
-            <input type="email" class="form-control contact-email-input">
+            <input type="email" class="form-control contact-email-input" value="<%- email %>">
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label">Telephone number:</label>
           <div class="col-sm-6">
-            <input type="tel" class="form-control contact-tel-input">
+            <input type="tel" class="form-control contact-tel-input" value="<%- tel %>">
           </div>
         </div>
         <div class="form-group">
@@ -108,39 +109,39 @@
                 contacts: [
                     {
                         id: 1,
-                        name : 'Terrence S. Hatfield',
+                        name : 'Aaron S. Rodger',
                         tel: '651-603-1723',
-                        email: 'TerrenceSHatfield@rhyta.com'
+                        email: 'aaronsrodger@rhyta.com'
                     },
                     {
                         id: 2,
-                        name : 'Chris M. Manning',
+                        name : 'Clay K. Mathews',
                         tel: '513-307-5859',
-                        email: 'ChrisMManning@dayrep.com'
+                        email: 'claykmathews@dayrep.com'
                     },
                     {
                         id: 3,
-                        name : 'Ricky M. Digiacomo',
+                        name : 'Mighty S Kapernick II',
                         tel: '918-774-0199',
-                        email: 'RickyMDigiacomo@teleworm.us'
+                        email: 'mightyskapernick@teleworm.us'
                     },
                     {
                         id: 4,
-                        name : 'Michael K. Bayne',
+                        name : 'Michael S Angelo',
                         tel: '702-989-5145',
-                        email: 'MichaelKBayne@rhyta.com'
+                        email: 'michaelsangel@rhyta.com'
                     },
                     {
                         id: 5,
-                        name : 'John I. Wilson',
+                        name : 'Lebron King Jump',
                         tel: '318-292-6700',
-                        email: 'JohnIWilson@dayrep.com'
+                        email: 'lebronsking@dayrep.com'
                     },
                     {
                         id: 6,
-                        name : 'Rodolfo P. Robinett',
+                        name : 'Steve S Gohaan',
                         tel: '803-557-9815',
-                        email: 'RodolfoPRobinett@jourrapide.com'
+                        email: 'GohanNpikolo@jourrapide.com'
                     }
                 ]
             });
