@@ -20,7 +20,9 @@ window.ContactManager={
 
         router.on('route:newContact', function () {
             console.log(" routing to new contact");
-            var newContactForm = new ContactManager.Views.ContactForm();
+            var newContactForm = new ContactManager.Views.ContactForm({
+                model: new ContactManager.Models.Contact()
+            });
             newContactForm.on('form:submitted', function (attrs) {
                 attrs.id = contacts.isEmpty() ? 1 : (_.max(contacts.pluck('id')) + 1);
                 contacts.add(attrs);
@@ -29,8 +31,20 @@ window.ContactManager={
             $('.main-container').html(newContactForm.render().$el);
         });
 
-        router.on('route:editContact',function(){
+        router.on('route:editContact',function(id){
             console.log(" routing to edit a contact");
+            var contact = contacts.get(id),
+                editContactForm;
+
+            if (contact) {
+                editContactForm = new ContactManager.Views.ContactForm({
+                    model: contact
+                });
+
+                $('.main-container').html(editContactForm.render().$el);
+            } else {
+                router.navigate('contacts', true);
+            }
         });
 
         Backbone.history.start();
