@@ -18,8 +18,15 @@ window.ContactManager={
             $('.main-container').html(contactsView.render().$el);
         });
 
-        router.on('route:newContact',function(){
-           console.log(" routing to new contact");
+        router.on('route:newContact', function () {
+            console.log(" routing to new contact");
+            var newContactForm = new ContactManager.Views.ContactForm();
+            newContactForm.on('form:submitted', function (attrs) {
+                attrs.id = contacts.isEmpty() ? 1 : (_.max(contacts.pluck('id')) + 1);
+                contacts.add(attrs);
+                router.navigate('contacts', true);
+            });
+            $('.main-container').html(newContactForm.render().$el);
         });
 
         router.on('route:editContact',function(){
