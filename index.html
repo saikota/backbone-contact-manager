@@ -23,6 +23,14 @@
       </div>
     </div>
 
+    <script type="text/template" id="tpl-contacts">
+      <h2 class="page-header text-center">List of contacts</h2>
+      <p class="text-center">
+        <a href="#contacts/new" class="btn btn-lg btn-outline">Add Contact</a>
+      </p>
+      <ul class="media-list row contacts-container"></ul>
+    </script>
+
     <script type="text/template" id="tpl-contact">
         <div class="thumbnail">
             <img class="media-object" src="app/img/faces/<%- avatar %>">
@@ -48,9 +56,36 @@
         <hr>
     </script>
 
-    <script type="text/template" id="tpl-contacts">
-        <h2 class="page-header text-center">List of contacts</h2>
-        <ul class="media-list row contacts-container"></ul>
+    <script type="text/template" id="tpl-new-contact">
+      <h2 class="page-header text-center">Create Contact</h2>
+      <form role="form" class="form-horizontal contract-form">
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Full name:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control contact-name-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Email address:</label>
+          <div class="col-sm-6">
+            <input type="email" class="form-control contact-email-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Telephone number:</label>
+          <div class="col-sm-6">
+            <input type="tel" class="form-control contact-tel-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-4 col-sm-3">
+            <button type="submit" class="btn btn-outline btn-lg btn-block">Submit</button>
+          </div>
+          <div class="col-sm-3">
+            <a href="#contacts" class="btn btn-outline btn-lg btn-block">Cancel</a>
+          </div>
+        </div>
+      </form>
     </script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -58,12 +93,13 @@
     <script src="vendor/backbone/backbone.js"></script>
 
     <script src="app/js/app.js"></script>
-
-    <script src="app/js/router.js"></script>
-    <script src="app/js/views/contact.js"></script>
-    <script src="app/js/views/contacts.js"></script>
     <script src="app/js/models/contact.js"></script>
     <script src="app/js/collections/contacts.js"></script>
+    <script src="app/js/views/contact.js"></script>
+    <script src="app/js/views/contacts.js"></script>
+    <script src="app/js/views/contactForm.js"></script>
+    <script src="app/js/router.js"></script>
+
 
 
     <script>
@@ -110,7 +146,5 @@
             });
         });
     </script>
-
-
   </body>
 </html>
